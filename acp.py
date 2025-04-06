@@ -12,13 +12,13 @@ def randPass(length):
                 (punctuations)]
     characters = lowercases + uppercases + digits + punctuations
     
-    password = password + random.choice(characters, k = length - len(password))
+    password = password + random.choices(characters, k = length - len(password))
     
     random.shuffle(password)
     
     return "".join(password)
 
-passLength = random.randit(6,10)
+passLength = random.randint(6,10)
 password = randPass(passLength)
 
 print(f"Password: {password}")
